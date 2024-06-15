@@ -4,16 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <AutoCompleteTextView
+        android:id="@+id/exSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:completionThreshold="0"
+        android:dropDownHeight="200dp"
+        android:hint="@string/enter_exercise"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/exView"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+    <AutoCompleteTextView
+        android:id="@+id/repCount"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/rep_count"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/text_view_id"
+        app:layout_constraintTop_toBottomOf="@+id/exSearch" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/text_view_id"
+        android:layout_width="92dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:text="@string/reps"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/exView" /><![CDATA[
+
+
+
+    "
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+
+
+
+
+
+
+    ]]>
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -21,10 +63,45 @@
         android:layout_height="189dp"
         android:background="#0CFFFFFF"
         android:scaleType="centerInside"
+        android:contentDescription="@string/logo_of_gainstracker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/gtlogo"
-        tools:layout_editor_absoluteY="-37dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gtlogo" />
+
+    <TextView
+        android:id="@+id/exView"
+        android:layout_width="124dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:text="@string/exercise"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/set_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repCount" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="341dp"
+        android:layout_height="266dp"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
